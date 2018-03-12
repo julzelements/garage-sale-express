@@ -2,7 +2,7 @@ const request = require('supertest');
 const express = require('express');
 const mocha = require('mocha');
 
-const app = express();
+const app = require('./app');
 
 describe('GET /user', function() {
   it('respond with json', function(done) {
