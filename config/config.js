@@ -5,7 +5,7 @@ module.exports = {
         username: 'postgres',
         password: 'postgres',
         database: 'garage_sale_dev',
-        host: '127.0.0.1',
+        host: 'localhost',
         dialect: 'postgres',
         operatorsAliases: false
     },
@@ -13,7 +13,7 @@ module.exports = {
         username: 'postgres',
         password: 'postgres',
         database: 'garage_sale_dev',
-        host: '127.0.0.1',
+        host: 'localhost',
         dialect: 'postgres'
     },
     production: {

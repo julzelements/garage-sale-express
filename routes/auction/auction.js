@@ -2,8 +2,7 @@ var router = require('express').Router();
 const service = require('../../services')
 
 router.get('/', function (req, res) {
-    console.log(service.getAuctions())
-    res.json(service.getAuctions());
+    res.json("test");
 });
 
 module.exports = router;

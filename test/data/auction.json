@@ -1,0 +1,20 @@
+{
+  "item_name": "Test",
+  "description": "Core i7 Macbook Pro",
+  "serial_number": "123",
+  "seller": null,
+  "price": 100,
+  "location": "Brisbane",
+  "id": 1,
+  "is_sold": true,
+  "images": {
+    "data": [
+      {
+        "rawImageData": "base64String",
+        "name": "mealphoto.jpeg",
+        "id": 1,
+        "auction_id": 1
+      }
+    ]
+  }
+}

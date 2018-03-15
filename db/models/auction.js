@@ -8,7 +8,14 @@ module.exports = (sequelize, DataTypes) => {
         location: DataTypes.STRING,
         seller: DataTypes.STRING,
         price: DataTypes.DOUBLE,
-        is_sold: DataTypes.BOOLEAN,
+        is_sold: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        is_deleted: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
 
     });
     Auction.associate = function (models) {

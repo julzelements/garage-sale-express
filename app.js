@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('./db');
 
-var auction = require('./routes/auction');
+var auction = require('./routes/auction/auction');
 
 var app = express();
 

@@ -1,4 +1,3 @@
-const _ = require('lodash');
-const auctionService = require('./auction_service')
+const _ = require('lodash'), auctionService = require('./auction_service')
 
-module.exports =_.merge({},auctionService);
+module.exports = _.merge({}, auctionService);
