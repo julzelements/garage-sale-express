@@ -1,5 +1,9 @@
 var router = require('express').Router();
-router.get('/', require('./list.js'));
-router.post('/create', require('./create.js'));
-router.post('/update', require('./update.js'));
+const service = require('../../services')
+
+router.get('/', function (req, res) {
+    console.log(service.getAuctions())
+    res.json(service.getAuctions());
+});
+
 module.exports = router;
