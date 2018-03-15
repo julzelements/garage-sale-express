@@ -3,7 +3,9 @@
 //update auction
 //buy auction
 'use strict'
-const models = require('../db/models'), Serializer = require('sequelize-to-json'), _ = require('lodash');
+const models = require('../db/models'),
+    Serializer = require('sequelize-to-json'),
+    _ = require('lodash');
 
 const schema = {
     include: ['@all'],
@@ -59,8 +61,14 @@ const deleteAuction = async (_id) => {
     await updateAuction(auction)
 }
 
+const buyAuction = async (_id) => {
+    const auction = await getAuctionById(_id)
+    auction.is_sold = true
+    await updateAuction(auction)
+}
+
 const mayUpdateAuction = (auction) => {
     return auction && !auction.is_sold
 }
 
-module.exports = {getAllAuctions, getAuctionById, insertAuction, updateAuction, deleteAuction}
+module.exports = {getAllAuctions, getAuctionById, insertAuction, updateAuction, deleteAuction, buyAuction}

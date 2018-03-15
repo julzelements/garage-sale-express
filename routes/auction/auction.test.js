@@ -1,7 +1,7 @@
-const request = require('supertest');
-const express = require('express');
-const mocha = require('mocha');
-const auction = require('../../test/data/auction');
+const request = require('supertest'),
+    express = require('express'),
+    mocha = require('mocha'),
+    auction = require('../../test/data/auction');
 
 const app = require('../../app');
 

@@ -1,5 +1,8 @@
-const service = require('./index'), auctionSample = require('../test/data/auction'),
-    models = require('../db/models/index'), Serializer = require('sequelize-to-json'), expect = require('chai').expect,
+const service = require('./auction_service'),
+    auctionSample = require('../test/data/auction'),
+    models = require('../db/models/index'),
+    Serializer = require('sequelize-to-json'),
+    expect = require('chai').expect,
     assert = require('chai').assert;
 
 describe('auction service ', function () {
@@ -79,6 +82,15 @@ describe('auction service ', function () {
         await service.deleteAuction(insertedAuction.id)
         var deletedAuction = await service.getAuctionById(insertedAuction.id)
         expect(deletedAuction.is_deleted).equal(true)
+    })
+
+    it('can buy an auction', async () => {
+        auction.is_sold = false;
+        auction.is_deleted = false;
+        var insertedAuction = await service.insertAuction(auction);
+        await service.buyAuction(insertedAuction.id)
+        var deletedAuction = await service.getAuctionById(insertedAuction.id)
+        expect(deletedAuction.is_sold).equal(true)
     })
 
     async function createAuction() {
